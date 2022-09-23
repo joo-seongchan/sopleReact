@@ -9,12 +9,11 @@ const reservdNotifications = [
 let timer;
 export const Chapter61 = () => {
   const [message, setMessage] = useState({ notifications: [] });
-
   const componentDidMount = () => {
     const { notifications } = message;
     timer = setInterval(() => {
       if (notifications.length < reservdNotifications.length) {
-        let index = notifications.length;
+        const index = notifications.length;
         notifications.push(reservdNotifications[index]);
         console.log(notifications);
         setMessage({
