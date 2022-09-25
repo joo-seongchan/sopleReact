@@ -18,5 +18,16 @@ export const UseCount = (props) => {
     console.log(`Current count value: ${count}`);
   }, []);
 
-  return <div></div>;
+  return (
+    <div style={{ padding: 16 }}>
+      <p>{`총${count}명 수용했습니다.`}</p>
+
+      <button onClick={increaseCount} disabled={isFull}>
+        입장
+      </button>
+      <button onClick={deCreaseCount}>퇴장</button>
+
+      {isFull && <p style={{ color: "red" }}>정원이 가득찻습니다.</p>}
+    </div>
+  );
 };
