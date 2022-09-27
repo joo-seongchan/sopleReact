@@ -3,14 +3,16 @@ import { Chapter61 } from "./chapter6/Chapter61";
 import NotificationList from "./chapter6/Chapter6EX1";
 import { UseCount } from "./chapter7/UseCount";
 import { Chapter8 } from "./chapter8/Chapter8";
+import { LandingPage } from "./chapter9/LandingPage";
 
 function App() {
   return (
     <>
-      <NotificationList />
+      {/* <NotificationList /> */}
       {/* <Chapter61 /> */}
       {/* <UseCount /> */}
       {/* <Chapter8 /> */}
+      <LandingPage />
     </>
   );
 }
