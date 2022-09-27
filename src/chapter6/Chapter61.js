@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Chapter6 } from "../chapter6/Chapter6";
 
 const reservdNotifications = [
@@ -6,16 +6,17 @@ const reservdNotifications = [
   { message: "점심 식사 시간입니다" },
   { message: "이제 곧 미팅이 시작됩니다." },
 ];
-let timer;
+
 export const Chapter61 = () => {
   const [message, setMessage] = useState({ notifications: [] });
+  const { notifications } = message;
+
   const componentDidMount = () => {
-    const { notifications } = message;
-    timer = setInterval(() => {
+    let timer = setInterval(() => {
       if (notifications.length < reservdNotifications.length) {
         const index = notifications.length;
         notifications.push(reservdNotifications[index]);
-        console.log(notifications);
+        console.log(notifications[index]);
         setMessage({
           notifications: notifications,
         });
